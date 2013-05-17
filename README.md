@@ -18,7 +18,7 @@ The mode can be provided as the third argument:
     $nearest = new \Ricoli\Nearest\Nearest();
     $nearestTimestamp = $nearest->getNearestTimestamp(300, time(), PHP_ROUND_HALF_DOWN);
 
-##Get it inside your application!
+##Add it your your application!
 
 Add to your composer.json:
 
