@@ -1,4 +1,4 @@
 nearest
 =======
 
-Gives the nearest X unit of time
+Gives the nearest timestamp by X seconds

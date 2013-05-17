@@ -1,0 +1,23 @@
+{
+    "name": "ricoli/nearest",
+    "type": "library",
+    "description": "Gives the nearest timestamp by X seconds",
+    "keywords": ["nearest", "timestamp", "seconds"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ricardo Oliveira",
+            "email": "ricardolotr@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~3.7"
+    },
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "minimum-stability": "dev"
+}
