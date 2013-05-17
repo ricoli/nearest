@@ -17,3 +17,14 @@ The mode can be provided as the third argument:
 
     $nearest = new \Ricoli\Nearest\Nearest();
     $nearestTimestamp = $nearest->getNearestTimestamp(300, time(), PHP_ROUND_HALF_DOWN);
+
+##Get it inside your application!
+
+Add to your composer.json:
+
+    "require": {
+        ...
+        "ricoli/nearest": "dev-master"
+    }
+
+https://packagist.org/packages/ricoli/nearest
