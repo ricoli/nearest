@@ -19,5 +19,8 @@
     "autoload": {
         "psr-0": { "": "src/" }
     },
+    "config": {
+        "bin-dir": "bin"
+    },
     "minimum-stability": "dev"
 }
