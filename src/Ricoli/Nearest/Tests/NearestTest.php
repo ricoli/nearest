@@ -48,7 +48,7 @@ class NearestTest extends \PHPUnit_Framework_TestCase
             array(1.1)
         );
     }
-    
+
     /**
      * @expectedException InvalidArgumentException
      */
@@ -56,7 +56,7 @@ class NearestTest extends \PHPUnit_Framework_TestCase
     {
         $this->nearest->getNearestTimestamp(1, 1, 'this is sparta!');
     }
-    
+
     public function test_getNearestTimestamp_returns_nearest_timestamp_according_to_number_of_seconds()
     {
         $this->assertSame(915195600, $this->nearest->getNearestTimestamp(3600, 915195750));
@@ -67,22 +67,24 @@ class NearestTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertSame(1368801000, $this->nearest->getNearestTimestamp(300, 1368801112));
     }
-    
+
     /**
      * @dataProvider getModesTestCases
      */
-    public function test_getNearestTimestamp_returns_nearest_timestamp_using_according_to_mode($mode, $expectedTimestamp)
+    public function test_getNearestTimestamp_returns_nearest_timestamp_according_to_mode($timestamp, $mode, $expectedTimestamp)
     {
-        $this->assertSame($expectedTimestamp, $this->nearest->getNearestTimestamp(300, 915195750, $mode));
+        $this->assertSame(strtotime($expectedTimestamp), $this->nearest->getNearestTimestamp(300, strtotime($timestamp), $mode));
     }
-    
+
     public function getModesTestCases()
     {
         return array(
-            array(PHP_ROUND_HALF_DOWN, 915195600),
-            array(PHP_ROUND_HALF_UP, 915195900),
-            array(PHP_ROUND_HALF_ODD, 915195900),
-            array(PHP_ROUND_HALF_EVEN, 915195600),
+            array('1 January 1970 13:02:30', PHP_ROUND_HALF_DOWN, '1 January 1970 13:00:00'),
+            array('1 January 1970 13:02:30', PHP_ROUND_HALF_UP, '1 January 1970 13:05:00'),
+            array('1 January 1970 13:05:01', Nearest::NEAREST_CEIL, '1 January 1970 13:10:00'),
+            array('1 January 1970 13:10:00', Nearest::NEAREST_CEIL, '1 January 1970 13:10:00'),
+            array('1 January 1970 13:09:59', Nearest::NEAREST_FLOOR, '1 January 1970 13:05:00'),
+            array('1 January 1970 13:15:00', Nearest::NEAREST_FLOOR, '1 January 1970 13:15:00')
         );
     }
 }
