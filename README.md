@@ -1,6 +1,6 @@
 #nearest
 
-[![Build Status](https://travis-ci.org/ricoli/nearest.png)](https://travis-ci.org/ricoli/nearest)
+[![Build Status](https://travis-ci.org/ricoli/nearest.png)](https://travis-ci.org/ricoli/nearest) [![Total Downloads](https://poser.pugx.org/ricoli/nearest/downloads.png)](https://packagist.org/packages/ricoli/nearest)
 
 Gives the nearest timestamp by X seconds.
 Inspired by the ruby project with the same name.
